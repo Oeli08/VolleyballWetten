@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+  <link rel="icon" href="{% static 'polls/GonLara.png' %}">
+  <title>Login / Registrierung</title>
+</head>
+<body>
+  <a href="{% url 'accounts:login' %}"><button>Login</button></a>
+  <a href="{% url 'accounts:register' %}"><button>Registrieren</button></a>
+
+</body>
+</html>
