@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+  <link rel="icon" href="{% static 'polls/GonLara.png' %}">
+  <title>Verifizierung</title>
+</head>
+<body>
+
+  <p>Ihnen wurde ein Link mit einem Verifizierungscode geschickt</p>
+  
+  <form method="post" action="{% url 'accounts:verification_action' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="code">Code:</label>
+      <input type="text" name="code" id="code" required>
+    </div>
+    <button type="submit">Verifizieren</button>
+  </form>
+
+</body>
+</html>
